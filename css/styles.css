@@ -1,0 +1,39 @@
+:root {
+  /* color */
+  --white-color: ;
+  --black-color: ;
+  --primary-color: #f2cb3f;
+  --primary-color-gradient: ;
+  --secondary-color: #3FB95A;
+  --secondary-color-gradient: ;
+  --tertiary-color: #9A3C3C;
+  --tertiary-color-gradient: ;
+  --quaternary-color: #4244FF;
+  --quaternary-color-gradient: ;
+
+  --font-color: ;
+  /* size */
+
+  /* font & size */
+}
+
+body {
+  background-color: var(--black-color);
+}
+
+.arrow {
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+}
+
+.down {
+  transform: rotate(45deg);
+/*   -webkit-transform: rotate(45deg);
+  오래된 브라우저를 지원해야 할 수도 있기 때문 */
+}
+
+.right {
+  transform: rotate(-45deg);
+}
