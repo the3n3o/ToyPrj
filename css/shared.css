@@ -20,7 +20,7 @@
   --secondary-font-color: #80adff;
   --shadow-color: #cccccc;
   /* size */
-  --nav-width: 70rem;
+  --nav-width: 75rem;
   --border-radius: 4px;
   /* font & size */
 }
@@ -54,6 +54,14 @@
   margin-right: .75rem;
   position: relative;
   width: .2rem;
+}
+
+.chick {
+  background-color: rgb(228, 181, 29);
+}
+
+.chicken {
+  background-color: rgb(221, 49, 49);
 }
 
 /***** Basic Structure *****/
@@ -168,14 +176,38 @@ a {
 }
 
 .dropdown-contents {
-  top: 100% ;
+  top: calc(100% + 0.5rem) ;
   left: 0;
 }
 
 .sub-dropdown-contents {
-  top: 0;
-  left: calc(100% + 0.5rem);
+  top: -0.5rem;
+  left: calc(100% + 0.7rem);
   min-width: inherit;
+}
+
+/* Nav 메뉴와 Dropdown 사이 간격 띄우기 (호버 끊김 방지) */
+.dropdown:hover .dropdown-contents::before {
+  content: "";
+  display: block;
+  height: 0.5rem;
+  top: -0.5rem;
+  left: 0;
+  position: absolute;
+  width: 100%;
+/*   background-color: green; */
+}
+
+/* Dropdown 1차와 2차 사이 간격 띄우기 (호버 끊김 방지) */
+.sub-dropdown:hover .sub-dropdown-contents::before {
+  content: "";
+  display: block;
+  top: 0;
+  left: -0.2rem;
+  position: absolute;
+  width: 0.2rem;
+  height: 100%;
+/*   background-color: green; */
 }
 
 .dropdown-contents li a {
@@ -217,3 +249,10 @@ a {
   color: var(--secondary-font-color);
 }
 
+/***** Fixed Back to Top Button *****/
+/* JS로 구현가능한지? */
+
+
+
+/* @media */
+/* 구현필요 */
