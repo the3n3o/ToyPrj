@@ -15,16 +15,16 @@
     <link rel="stylesheet" href="css/shared.css" />
     <link rel="stylesheet" href="css/styles.css" />
     <!-- JS -->
-    <script src="js/app.js" defer></script>
     <script src="js/styles.js" defer></script>
     <script src="js/layout.js" defer></script>
+    <script src="js/app.js" defer></script>
   </head>
   <body>
     <!-- Header -->
     <header>
       <nav class="nav-box">
         <div class="nav-contents-box">
-          <a href="" class="nav-logo">Neo</a>
+          <a href="" class="nav-logo">Neo's World</a>
           <ul class="nav-menu">
             <li><a href="">Home</a></li>
             <li class="dropdown">
@@ -115,26 +115,43 @@
           </ul>
         </div>
       </nav>
+      <!-- Back to top -->
+      <div>
+        <button onclick="topFunction()" id="top-btn" title="Go to top">
+          Top
+        </button>
+      </div>
     </header>
 
     <!-- #1 Main -->
     <main>
-      <section>
-        <div>
-          <h1>Hello, World!</h1>
-          <p>Enjoy my little toys.</p>
-          <p>:&#41;</p>
+      <section class="parallax">
+        <img src="images/Clouds 7/1_alt.png" alt="cloud_1_alt" id="cloud-bg-alt" />
+        <img src="images/Clouds 7/1.png" alt="cloud_1" id="cloud-bg" />
+        <img src="images/Clouds 7/2.png" alt="cloud_2" id="cloud-hrz" />
+        <img src="images/Clouds 7/3L.png" alt="cloud_3" id="cloud-back-L" />
+        <img src="images/Clouds 7/3R.png" alt="cloud_3" id="cloud-back-R" />
+        <img src="images/Clouds 7/4-2L.png" alt="cloud_5Left" id="cloud2-L" />
+        <img src="images/Clouds 7/4-2R.png" alt="cloud_5Right" id="cloud2-R" />
+        <div class="main-text">
+          <div class="main-text-box">
+            <h1>Hello, World!</h1>
+            <p>Enjoy my little toys.</p>
+            <p>:&#41;</p>
+          </div>
         </div>
         <div>
           <p>SCROLL DOWN</p>
           <div class="arrow down"></div>
         </div>
-        <div>
-          <a href="">TOP</a>
-        </div>
+        <img src="images/Clouds 7/4-1.png" alt="cloud_4" id="cloud1" />
+        <img src="images/Clouds 7/4-3.png" alt="cloud_6" id="cloud3" />
+        <img src="images/Clouds 7/4-4.png" alt="cloud_7" id="cloud4" />
+        <img src="images/Clouds 7/4-5.png" alt="cloud_7" id="cloud5" />
+        <img src="images/Clouds 7/cloud-btm.png" alt="cloud_7" id="cloud-btm" />
       </section>
       <!-- #2 Category -->
-      <section>
+      <section class="c2">
         <h2>Category</h2>
         <div>
           <h3></h3>
@@ -153,6 +170,13 @@
         <h2>Project Chicken</h2>
       </section>
     </main>
+
+    <div class="lorem">
+      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Debitis eius nobis doloribus tempora a aperiam consequatur voluptatum, impedit magnam eos natus praesentium odit mollitia, delectus, nostrum consequuntur! Minima, explicabo ipsum!
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. In sapiente explicabo, doloribus ipsum porro consequuntur qui? Pariatur est mollitia recusandae ea adipisci dolorem deserunt. Veritatis ipsum alias cupiditate explicabo cumque!
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti reprehenderit totam aut nostrum illum aspernatur, laborum officia corrupti, vero optio accusantium temporibus vitae dolorum delectus praesentium ea eveniet quae eos.
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur quam voluptas, corporis autem saepe odio, laudantium mollitia similique accusamus quibusdam tempore numquam aliquam in perspiciatis? Incidunt tempora quibusdam autem ex.
+    </div>
 
     <!-- Footer -->
     <footer>

@@ -2,8 +2,8 @@
 
 :root {
   /* color */
-  --white-color: white;
-  --black-color: black;
+  --white-color: #f5f5f5;
+  --black-color: #121212;
   --primary-color: #1b1b1b;
   --primary-color-gradient: ;
   --secondary-color: ;
@@ -20,7 +20,7 @@
   --secondary-font-color: #80adff;
   --shadow-color: #cccccc;
   /* size */
-  --nav-width: 75rem;
+  --nav-width: 70rem;
   --border-radius: 4px;
   /* font & size */
 }
@@ -37,7 +37,7 @@
 .down {
   transform: rotate(45deg);
   -webkit-transform: rotate(45deg);
-/*   오래된 브라우저를 지원해야 할 수도 있기 때문 */
+  /*   오래된 브라우저를 지원해야 할 수도 있기 때문 */
 }
 
 .right {
@@ -51,9 +51,9 @@
 .submenu-icon {
   background-color: white;
   height: 2rem;
-  margin-right: .75rem;
+  margin-right: 0.75rem;
   position: relative;
-  width: .2rem;
+  width: 0.2rem;
 }
 
 .chick {
@@ -66,15 +66,28 @@
 
 /***** Basic Structure *****/
 
-body,html,ul {
+body,
+html,
+ul {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
+  scroll-behavior: smooth;
+}
+
+section,
+h1,
+h2,
+h3 {
+  margin: 0;
+  padding: 0;
 }
 
 body {
   background-color: gray;
+  min-height: 100vh;
+  overflow-x: hidden;
 }
 
 li {
@@ -154,11 +167,13 @@ a {
 }
 
 /* Dropdown */
-.dropdown, .sub-dropdown {
+.dropdown,
+.sub-dropdown {
   position: relative;
 }
 
-.dropdown-contents, .sub-dropdown-contents {
+.dropdown-contents,
+.sub-dropdown-contents {
   /* display: none; */
   opacity: 0;
   visibility: hidden;
@@ -176,7 +191,7 @@ a {
 }
 
 .dropdown-contents {
-  top: calc(100% + 0.5rem) ;
+  top: calc(100% + 0.5rem);
   left: 0;
 }
 
@@ -195,7 +210,7 @@ a {
   left: 0;
   position: absolute;
   width: 100%;
-/*   background-color: green; */
+  /*   background-color: green; */
 }
 
 /* Dropdown 1차와 2차 사이 간격 띄우기 (호버 끊김 방지) */
@@ -207,52 +222,81 @@ a {
   position: absolute;
   width: 0.2rem;
   height: 100%;
-/*   background-color: green; */
+  /*   background-color: green; */
 }
 
 .dropdown-contents li a {
   display: flex;
   padding: 0.5rem;
   align-items: center;
-/*   box-sizing: border-box; */
-/* ul padding 떄문에 hover가 중간에 끊기는 문제가 있어서 box-sizing 넓힘 */
+  /*   box-sizing: border-box; */
+  /* ul padding 떄문에 hover가 중간에 끊기는 문제가 있어서 box-sizing 넓힘 */
 }
 
 .sub-dropdown-contents li a {
   box-sizing: border-box;
 }
 
-.dropdown-contents li, .sub-dropdown-contents li {
+.dropdown-contents li,
+.sub-dropdown-contents li {
   color: var(--primary-font-color);
   white-space: nowrap;
-/*   overflow: hidden; */
+  /*   overflow: hidden; */
   text-overflow: ellipsis;
   padding: 0;
   width: auto;
 }
 
-.dropdown-contents li, .sub-dropdown-contents li {
+.dropdown-contents li,
+.sub-dropdown-contents li {
   background-color: var(--primary-color);
 }
 
-.dropdown:hover .dropdown-contents, .sub-dropdown:hover .sub-dropdown-contents {
+.dropdown:hover .dropdown-contents,
+.sub-dropdown:hover .sub-dropdown-contents {
   opacity: 1;
   visibility: visible;
 }
 
-.dropdown-contents li:hover, .sub-dropdown-contents li:hover {
+.dropdown-contents li:hover,
+.sub-dropdown-contents li:hover {
   background-color: var(--hover-secondary-color);
   color: var(--secondary-font-color);
 }
 
-.dropdown-contents li:hover a, .sub-dropdown-contents li:hover a {
+.dropdown-contents li:hover a,
+.sub-dropdown-contents li:hover a {
   color: var(--secondary-font-color);
 }
 
 /***** Fixed Back to Top Button *****/
-/* JS로 구현가능한지? */
 
+#top-btn {
+  /* display: none; */ /* 디폴트로 감추기 */
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  position: fixed;
+  bottom: 1.5rem;
+  right: 2rem;
+  z-index: 100;
+  border: none;
+  outline: none;
+  background-color: var(--primary-color);
+  color: white;
+  cursor: pointer;
+  padding: 1.25rem;
+  border-radius: 10px;
+  font-size: 1.25rem;
+}
+
+#top-btn:hover {
+  background-color: var(--hover-color);
+  color: var(--secondary-font-color);
+}
 
 
 /* @media */
 /* 구현필요 */
+/* ex) 1500px 이하일땐 dropdown 좌측으로 */
+/* ex) 모바일 사이즈일땐 Icon을 활용한 사이드바 */
