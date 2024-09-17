@@ -2,7 +2,13 @@
 const topBtnElement = document.getElementById("top-btn");
 
 // Parallax
-const parallaxTextElement = document.getElementsByClassName('main-text-box');
+const parallaxTextElementRaw = document.getElementsByClassName('main-text');
+const parallaxText1Element = parallaxTextElementRaw[0];
+const parallaxText2Element = parallaxTextElementRaw[1];
+const parallaxTextBoxElementRaw = document.getElementsByClassName('main-text-box');
+const parallaxTextBox1Element = parallaxTextBoxElementRaw[0];
+const parallaxTextBox2Element = parallaxTextBoxElementRaw[1];
+
 const parallaxBgElement = document.getElementById('cloud-bg');
 const parallaxHrzElement = document.getElementById('cloud-hrz');
 const parallaxBackLElement = document.getElementById('cloud-back-L');

@@ -53,11 +53,14 @@
 }
 
 .main-text-box {
-  position: absolute;
-  font-size: 5rem;
+  position: fixed;
+  font-size: 3.5rem;
   color: #121212;
   text-align: center;
-  transform: translateY(3rem);
+  transform: translateY(3rem) scale(1.5);
+  opacity: 1;
+  transition: transform 0.2s ;
+  transition: opacity 0.2s ;
 }
 
 .main-text-box p {
