@@ -55,12 +55,29 @@
 .main-text-box {
   position: fixed;
   font-size: 3.5rem;
-  color: #121212;
+  color: #505050;
   text-align: center;
   transform: translateY(3rem) scale(1.5);
-  opacity: 1;
   transition: transform 0.2s ;
   transition: opacity 0.2s ;
+}
+
+.main-text-box.opacity-hidden {
+  top: 40%;
+}
+
+.highlight-font {
+  color: #252525;
+}
+
+.tran1 {
+  color: #505050;
+  transition: color 0.2s ease;
+}
+
+.tran2 {
+  color: #252525; 
+  transition: color 0.2s ease;
 }
 
 .main-text-box p {

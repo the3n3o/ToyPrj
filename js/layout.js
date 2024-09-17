@@ -56,82 +56,95 @@ window.addEventListener("scroll", () => {
   }
 
   /* 스크롤 시 Main Text 스케일 & 투명도 */
+  const textBox1 = document.querySelector(".main-text-box.opacity-visible");
+  const textBox2 = document.querySelector(".main-text-box.opacity-hidden");
 
-  // Scale은 10번의 스크롤 (scrollY = 1000) 동안 스케일업
-  // opacity는 2번의 스크롤 (scrollY = 200) 동안 0
-  const textBox1 = 1000;
-  const textBox2 = 1400;
-  // 스케일이 최고로 커졌을때를 나타내는 방법?
-  // clampedScale 이 maxScale 이 되었을 때의 "최초" scrollY 를 추출하고 그값을 currentMaxScaleScrollY에 배열로 storage 하고 clampedScale을 사용할때마다 index가 1씩 증가하게 할 수 있을까?
-  // 그렇다면 scale = minScale + ((value - currentMaxScaleScroll[1씩증가]) / 1000); 이 될 듯
-
-  let initMinScale = 0;
-  let initMaxScale = 0;
-  let initSpeed = 0;
-  let initStartPoint = 0;
-  const minOpacity = 1;
-  const maxOpacity = 0;
-
-  function initSpec(minScale, maxScale, speed, startPoint) {
-    initMinScale = minScale;
-    initMaxScale = maxScale;
-    initSpeed = speed;
-    initStartPoint = startPoint;
-  }
-
-  initSpec(1.5, 1.7, 5000, textBox1);
-
-  let scale = 0;
-  function scaling() {
-    scale = initMinScale + value / initSpeed;
-    return scale;
-  }
-  scaling();
-
-  let clampedScale = 0;
-  function clampedScaling() {
-    clampedScale = Math.min(Math.max(scale, initMinScale), initMaxScale);
-    return clampedScale;
-  }
-  clampedScaling();
-
-  let refScale = 0;
-  function refScaling() {
-    refScale = initMinScale + (value - initStartPoint) / 2000;
-    return refScale;
-  }
-  refScaling();
-
-  let refClampedScale = 0;
-  function refClampedScaling() {
-    refClampedScale = Math.min(Math.max(refScale, initMinScale), initMaxScale);
-  }
-  refClampedScaling();
-
-  function calScaling() {
-    scaling();
-    clampedScaling();
-    refScaling();
-    refClampedScaling();
-  }
-  calScaling();
-
-  let opacity;
-  if (refClampedScale <= initMaxScale) {
-    opacity =
-      maxOpacity +
-      (initMaxScale - refClampedScale) / (initMaxScale - initMinScale);
-    // maxScale - minScale 은 유동적 스케일의 전체 범위를 뜻하고 이것을 분모로 두고 분자에 maxScale - refClampedScale 을 두어 현재 스케일이 최대 스케일대비 몇% 정도인지 알 수 있음
+  if (value >= 1000 && value <= 1400) {
+    // opacity
+    const fadeOutStart = 1000;
+    const fadeOutEnd = 1400;
+    const progressOpacity =
+      (value - fadeOutStart) / (fadeOutEnd - fadeOutStart);
+    textBox1.style.opacity = 1 - progressOpacity;
+  } else if (value > 1400) {
+    textBox1.style.opacity = 0;
+    // textBox1.style.visibility = 'hidden';
   } else {
-    opacity = minOpacity;
+    textBox1.style.opacity = 1;
+    // textBox1.style.visibility = 'visible';
   }
 
-  /* 첫번째 텍스트 */
-  parallaxTextBox1Element.style.transform = `translateY(3rem) scale(${clampedScale})`;
-  parallaxTextBox1Element.style.opacity = opacity;
-  /* 두번째 텍스트 */
-  initSpec(1.5, 1.7, 5000, textBox2);
-  calScaling();
-  parallaxTextBox2Element.style.transform = `translateY(3rem) scale(${clampedScale})`;
-  parallaxTextBox2Element.style.opacity = opacity;
+  if (value >= 0 && value <= 1400) {
+    // scale
+    const scaleStart = 0;
+    const scaleEnd = 1000;
+    const scaleMin = 1.5;
+    const scaleMax = 1.7;
+    const progressScale =
+      scaleMin +
+      ((value - scaleStart) / (scaleEnd - scaleStart)) * (scaleMax - scaleMin);
+    textBox1.style.transform = `translateY(3rem) scale(${progressScale}`;
+    // color transition
+    const tran1 = document.querySelector('.tran1');
+    const startColor = [80, 80, 80];
+    const endColor = [128,0,128];
+    const progressColor = (value / 1000);
+
+    const r = Math.round(startColor[0] + progressColor * (endColor[0] - startColor[0]));
+    const g = Math.round(startColor[1] + progressColor * (endColor[1] - startColor[1]));
+    const b = Math.round(startColor[2] + progressColor * (endColor[2] - startColor[2]));
+    tran1.style.color = `rgb(${r}, ${g}, ${b})`;
+  } else if (value > 1400) {
+    textBox1.style.transform = "translateY(3rem) scale(1.7)";
+  } else {
+    textBox1.style.transform = "translateY(3rem) scale(1.5)";
+  }
+
+  if (value >= 1500 && value <= 1800) {
+    // opacity
+    const fadeInStart = 1500;
+    const fadeInEnd = 1800;
+    const progressOpacity = (value - fadeInStart) / (fadeInEnd - fadeInStart);
+    textBox2.style.opacity = progressOpacity;
+  } else if (value >= 2400 && value <= 3000) {
+    const fadeOutStart = 2400;
+    const fadeOutEnd = 3000;
+    const progressOpacity =
+      (value - fadeOutStart) / (fadeOutEnd - fadeOutStart);
+    textBox2.style.opacity = 1 - progressOpacity;
+  } else if (value >= 1800 && value <= 2400) {
+    textBox2.style.opacity = 1;
+    // textBox2.style.visibility = 'visible';
+  } else {
+    textBox2.style.opacity = 0;
+    // textBox2.style.visibility = 'hidden';
+  }
+
+  if (value >= 1500 && value <= 3000) {
+    // scale
+    const scaleStart = 1500;
+    const scaleEnd = 3000;
+    const scaleMin = 1.5;
+    const scaleMax = 1.7;
+    const progressScale =
+      scaleMin +
+      ((value - scaleStart) / (scaleEnd - scaleStart)) * (scaleMax - scaleMin);
+    textBox2.style.transform = `translateY(3rem) scale(${progressScale})`;
+    // color transition
+    const tran2 = document.querySelector('.tran2');
+    const startColor = [37, 37, 37];
+    const endColor = [27, 99, 255];
+    let progressColor = 0;
+    if (value >= 1500) {
+      progressColor = ((value - 1500) / 1500);
+    }
+    const r = Math.round(startColor[0] + progressColor * (endColor[0] - startColor[0]));
+    const g = Math.round(startColor[1] + progressColor * (endColor[1] - startColor[1]));
+    const b = Math.round(startColor[2] + progressColor * (endColor[2] - startColor[2]));
+    tran2.style.color = `rgb(${r}, ${g}, ${b})`;
+  } else if (value > 2700) {
+    textBox2.style.transform = "translateY(3rem) scale(1.7)";
+  } else {
+    textBox2.style.transform = "translateY(3rem) scale(1.5)";
+  }
 });
