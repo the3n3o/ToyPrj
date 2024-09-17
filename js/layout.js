@@ -28,20 +28,42 @@ function topFunction() {
 
 /* Parallax */
 
-window.addEventListener('scroll', () => {
+window.addEventListener("scroll", () => {
   let value = window.scrollY;
 
-  parallaxTextElement[0].style.marginTop = value * 2.5 + 'px';
-  parallaxCloud1Element.style.top = value * -0.5 + 'px';
-  parallaxCloud2LElement.style.left = value * -0.5 + 'px';
-  parallaxCloud2RElement.style.left = value * 0.3 + 'px';
-  parallaxCloud3Element.style.left = value * 0.1 + 'px';
-  parallaxCloud4Element.style.left = value * -0.1 + 'px';
-  parallaxBackLElement.style.left = value * -0.1 + 'px';
-  parallaxBackRElement.style.left = value * 0.1 + 'px';
-  parallaxCloud5Element.style.left = value * -0.2 + 'px';
+/*   parallaxTextElement[0].style.marginTop = value * 2.5 + "px"; */
+  parallaxCloud1Element.style.top = value * -0.5 + "px";
+  parallaxCloud2LElement.style.left = value * -0.5 + "px";
+  parallaxCloud2RElement.style.left = value * 0.3 + "px";
+  parallaxCloud3Element.style.left = value * 0.5 + "px";
+  parallaxCloud4Element.style.left = value * -0.2 + "px";
+  parallaxBackLElement.style.left = value * -0.2 + "px";
+  parallaxBackRElement.style.left = value * 0.2 + "px";
+  parallaxCloud5Element.style.left = value * -0.4 + "px";
 
-  parallaxBgElement.style.top = value * -0.05 + 'px';
-  parallaxHrzElement.style.top = value * -0.05 + 'px';
+  /* Cloud bottom & Bg,Hrz 고정 */
+  if (value >= 1415) {
+    parallaxCloudBtmElement.style.position = "fixed";
+    parallaxCloudBtmElement.style.top = "-70px";
+    parallaxCloudBtmElement.style.height = "1349px";
+    parallaxBgElement.style.top = value * "px";
+    parallaxHrzElement.style.top = value * "px";
+  } else {
+    parallaxCloudBtmElement.style.position = "absolute";
+    parallaxCloudBtmElement.style.top = "100%";
+    parallaxBgElement.style.top = value * -0.05 + "px";
+    parallaxHrzElement.style.top = value * -0.05 + "px";
+  }
 
+  /* Main Text Box 스크롤 & 고정 */
+  const textboxTargetScrollY = 1080;
+  if (value < textboxTargetScrollY) {
+    parallaxTextElement[0].style.marginTop = value * 2.5 + "px";
+    parallaxTextElement[0].style.position = 'absolute';
+    parallaxTextElement[0].style.top = 'inherit';
+  } else {
+    parallaxTextElement[0].style.marginTop = textboxTargetScrollY * 2.5 + "px";
+    parallaxTextElement[0].style.position = 'sticky';
+    parallaxTextElement[0].style.top = '517.5px';
+  }
 });
