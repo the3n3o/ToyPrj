@@ -20,6 +20,7 @@
   width: 100%;
   height: 100%;
   pointer-events: none;
+  object-fit: cover;
 }
 
 #cloud-bg, #cloud-hrz, #cloud-bg-alt {
@@ -27,7 +28,7 @@
 }
 
 #cloud-bg-alt {
-  top: 73px;
+  top: 0;
 }
 
 #cloud-btm {
@@ -42,6 +43,35 @@
   top: 80%;
 }
 
+#cloud-back-L,#cloud4 {
+  -webkit-animation: fluffybounceCloud 2.3s ease infinite alternate;
+}
+#cloud-back-R, #cloud3, #cloud5 {
+  -webkit-animation: fluffybounceCloud 2s ease infinite alternate-reverse;
+}
+#cloud2-R, #cloud2-L, #cloud1 {
+  -webkit-animation: fluffybounceCloud 1.7s ease infinite alternate-reverse;
+}
+#cloud-btm {
+  -webkit-animation: fluffybounceCloud2 4s ease infinite alternate-reverse;
+}
+@-webkit-keyframes fluffybounceCloud {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-0.5rem);
+  }
+}
+@-webkit-keyframes fluffybounceCloud2 {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(0.5rem);
+  }
+}
+
 .main-text {
   position: relative;
   display: flex;
@@ -50,6 +80,7 @@
   align-items: center;
   height: 100vh;
   width: 100%;
+  -webkit-animation: fluffybounceText 3s infinite alternate ;
 }
 
 .main-text-box {
@@ -57,13 +88,31 @@
   font-size: 3.5rem;
   color: #505050;
   text-align: center;
-  transform: translateY(3rem) scale(1.5);
+  transform: translateY(1.5rem) scale(1.5);
   transition: transform 0.2s ;
   transition: opacity 0.2s ;
 }
 
+@-webkit-keyframes fluffybounceText {
+  0% {
+    top: 0;
+  }
+  100% {
+    top: -0.5rem;
+  }
+}
+@-webkit-keyframes fluffybounceText2 {
+  0% {
+    top: 42%;
+  }
+  100% {
+    top: calc(42% - 0.5rem);
+  }
+}
+
 .main-text-box.opacity-hidden {
-  top: 40%;
+  -webkit-animation: fluffybounceText2 3s ease infinite alternate;
+  /* top: 42%; */
 }
 
 .highlight-font {
@@ -73,11 +122,13 @@
 .tran1 {
   color: #505050;
   transition: color 0.2s ease;
+  text-shadow: 2px 0 0 #e16acf;
 }
 
 .tran2 {
   color: #252525; 
   transition: color 0.2s ease;
+  text-shadow: 2px 0 0 #e16acf;
 }
 
 .main-text-box p {
@@ -85,6 +136,45 @@
   margin: 1.5rem;
 }
 
+.scroll-down {
+  position: fixed;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+}
+
+.scroll-down-box {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-weight: bold;
+  color: #ffffff;
+  margin: 1rem;
+  bottom: 8rem;
+  font-size: 1.5rem;
+  -webkit-animation: bounce 0.8s ease infinite alternate;
+}
+
+@-webkit-keyframes bounce {
+  0% {
+    transform: translateY(0rem);
+  }
+  100% {
+    transform: translateY(-0.7rem);
+  }
+}
+
+.scroll-down-box p {
+  text-shadow: 2px 1px 1px #e16acf;
+}
+
+
+/* 임시 */
 .c2 {
   background: red;
 }

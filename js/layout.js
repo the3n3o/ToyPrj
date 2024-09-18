@@ -42,7 +42,7 @@ window.addEventListener("scroll", () => {
   parallaxCloud5Element.style.left = value * -0.4 + "px";
 
   /* Cloud bottom & Bg,Hrz 고정 */
-  if (value >= 1415) {
+  if (value >= 1349) {
     parallaxCloudBtmElement.style.position = "fixed";
     parallaxCloudBtmElement.style.top = "-70px";
     parallaxCloudBtmElement.style.height = "1349px";
@@ -83,7 +83,7 @@ window.addEventListener("scroll", () => {
     const progressScale =
       scaleMin +
       ((value - scaleStart) / (scaleEnd - scaleStart)) * (scaleMax - scaleMin);
-    textBox1.style.transform = `translateY(3rem) scale(${progressScale}`;
+    textBox1.style.transform = `translateY(1.5rem) scale(${progressScale}`;
     // color transition
     const tran1 = document.querySelector('.tran1');
     const startColor = [80, 80, 80];
@@ -95,9 +95,9 @@ window.addEventListener("scroll", () => {
     const b = Math.round(startColor[2] + progressColor * (endColor[2] - startColor[2]));
     tran1.style.color = `rgb(${r}, ${g}, ${b})`;
   } else if (value > 1400) {
-    textBox1.style.transform = "translateY(3rem) scale(1.7)";
+    textBox1.style.transform = "translateY(1.5rem) scale(1.7)";
   } else {
-    textBox1.style.transform = "translateY(3rem) scale(1.5)";
+    textBox1.style.transform = "translateY(1.5rem) scale(1.5)";
   }
 
   if (value >= 1500 && value <= 1800) {
@@ -129,7 +129,7 @@ window.addEventListener("scroll", () => {
     const progressScale =
       scaleMin +
       ((value - scaleStart) / (scaleEnd - scaleStart)) * (scaleMax - scaleMin);
-    textBox2.style.transform = `translateY(3rem) scale(${progressScale})`;
+    textBox2.style.transform = `translateY(1.5rem) scale(${progressScale})`;
     // color transition
     const tran2 = document.querySelector('.tran2');
     const startColor = [37, 37, 37];
@@ -143,8 +143,10 @@ window.addEventListener("scroll", () => {
     const b = Math.round(startColor[2] + progressColor * (endColor[2] - startColor[2]));
     tran2.style.color = `rgb(${r}, ${g}, ${b})`;
   } else if (value > 2700) {
-    textBox2.style.transform = "translateY(3rem) scale(1.7)";
+    textBox2.style.transform = "translateY(1.5rem) scale(1.7)";
   } else {
-    textBox2.style.transform = "translateY(3rem) scale(1.5)";
+    textBox2.style.transform = "translateY(1.5rem) scale(1.5)";
   }
+
+  console.log(value);
 });
