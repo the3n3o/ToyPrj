@@ -4,13 +4,14 @@
 .parallax {
   position: relative;
   width: 100%;
-  height: 2698px;
+  height: 4500px;
+  background-color: var(--black-color);
 }
 
 .parallax-box {
   position: relative;
   width: 100%;
-/*   height: 100vh; */
+  /*   height: 100vh; */
 }
 
 .parallax-box img {
@@ -23,7 +24,9 @@
   object-fit: cover;
 }
 
-#cloud-bg, #cloud-hrz, #cloud-bg-alt {
+#cloud-bg,
+#cloud-hrz,
+#cloud-bg-alt {
   position: fixed;
 }
 
@@ -43,13 +46,18 @@
   top: 80%;
 }
 
-#cloud-back-L,#cloud4 {
+#cloud-back-L,
+#cloud4 {
   -webkit-animation: fluffybounceCloud 2.3s ease infinite alternate;
 }
-#cloud-back-R, #cloud3, #cloud5 {
+#cloud-back-R,
+#cloud3,
+#cloud5 {
   -webkit-animation: fluffybounceCloud 2s ease infinite alternate-reverse;
 }
-#cloud2-R, #cloud2-L, #cloud1 {
+#cloud2-R,
+#cloud2-L,
+#cloud1 {
   -webkit-animation: fluffybounceCloud 1.7s ease infinite alternate-reverse;
 }
 #cloud-btm {
@@ -80,7 +88,7 @@
   align-items: center;
   height: 100vh;
   width: 100%;
-  -webkit-animation: fluffybounceText 3s infinite alternate ;
+  -webkit-animation: fluffybounceText 3s infinite alternate;
 }
 
 .main-text-box {
@@ -89,8 +97,7 @@
   color: #505050;
   text-align: center;
   transform: translateY(1.5rem) scale(1.5);
-  transition: transform 0.2s ;
-  transition: opacity 0.2s ;
+  transition: transform 0.2s, opacity 0.2s;
 }
 
 @-webkit-keyframes fluffybounceText {
@@ -126,7 +133,7 @@
 }
 
 .tran2 {
-  color: #252525; 
+  color: #252525;
   transition: color 0.2s ease;
   text-shadow: 2px 0 0 #e16acf;
 }
@@ -173,11 +180,26 @@
   text-shadow: 2px 1px 1px #e16acf;
 }
 
+/* Bridge */
+.bridge {
+  display: flex;
+  height: 300vh;
+  background-color: var(--black-color);
+  justify-content: center;
+  align-items: center;
+}
+
+.bridge-text {
+  position: sticky;
+  top: 0;
+}
+
+.project {
+  font-size: 3rem;
+  color: var(--white-color);
+}
 
 /* 임시 */
-.c2 {
-  background: red;
-}
 .lorem {
   font-size: 5rem;
 }

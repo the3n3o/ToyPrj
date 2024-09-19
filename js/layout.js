@@ -42,10 +42,10 @@ window.addEventListener("scroll", () => {
   parallaxCloud5Element.style.left = value * -0.4 + "px";
 
   /* Cloud bottom & Bg,Hrz 고정 */
-  if (value >= 1349) {
+  if (value >= 1279) {
     parallaxCloudBtmElement.style.position = "fixed";
-    parallaxCloudBtmElement.style.top = "-70px";
-    parallaxCloudBtmElement.style.height = "1349px";
+    parallaxCloudBtmElement.style.top = "0px";
+    parallaxCloudBtmElement.style.height = "1279px";
     parallaxBgElement.style.top = value * "px";
     parallaxHrzElement.style.top = value * "px";
   } else {
@@ -85,14 +85,20 @@ window.addEventListener("scroll", () => {
       ((value - scaleStart) / (scaleEnd - scaleStart)) * (scaleMax - scaleMin);
     textBox1.style.transform = `translateY(1.5rem) scale(${progressScale}`;
     // color transition
-    const tran1 = document.querySelector('.tran1');
+    const tran1 = document.querySelector(".tran1");
     const startColor = [80, 80, 80];
-    const endColor = [128,0,128];
-    const progressColor = (value / 1000);
+    const endColor = [128, 0, 128];
+    const progressColor = value / 1000;
 
-    const r = Math.round(startColor[0] + progressColor * (endColor[0] - startColor[0]));
-    const g = Math.round(startColor[1] + progressColor * (endColor[1] - startColor[1]));
-    const b = Math.round(startColor[2] + progressColor * (endColor[2] - startColor[2]));
+    const r = Math.round(
+      startColor[0] + progressColor * (endColor[0] - startColor[0])
+    );
+    const g = Math.round(
+      startColor[1] + progressColor * (endColor[1] - startColor[1])
+    );
+    const b = Math.round(
+      startColor[2] + progressColor * (endColor[2] - startColor[2])
+    );
     tran1.style.color = `rgb(${r}, ${g}, ${b})`;
   } else if (value > 1400) {
     textBox1.style.transform = "translateY(1.5rem) scale(1.7)";
@@ -131,16 +137,22 @@ window.addEventListener("scroll", () => {
       ((value - scaleStart) / (scaleEnd - scaleStart)) * (scaleMax - scaleMin);
     textBox2.style.transform = `translateY(1.5rem) scale(${progressScale})`;
     // color transition
-    const tran2 = document.querySelector('.tran2');
+    const tran2 = document.querySelector(".tran2");
     const startColor = [37, 37, 37];
     const endColor = [27, 99, 255];
     let progressColor = 0;
     if (value >= 1500) {
-      progressColor = ((value - 1500) / 1500);
+      progressColor = (value - 1500) / 1500;
     }
-    const r = Math.round(startColor[0] + progressColor * (endColor[0] - startColor[0]));
-    const g = Math.round(startColor[1] + progressColor * (endColor[1] - startColor[1]));
-    const b = Math.round(startColor[2] + progressColor * (endColor[2] - startColor[2]));
+    const r = Math.round(
+      startColor[0] + progressColor * (endColor[0] - startColor[0])
+    );
+    const g = Math.round(
+      startColor[1] + progressColor * (endColor[1] - startColor[1])
+    );
+    const b = Math.round(
+      startColor[2] + progressColor * (endColor[2] - startColor[2])
+    );
     tran2.style.color = `rgb(${r}, ${g}, ${b})`;
   } else if (value > 2700) {
     textBox2.style.transform = "translateY(1.5rem) scale(1.7)";
@@ -148,5 +160,41 @@ window.addEventListener("scroll", () => {
     textBox2.style.transform = "translateY(1.5rem) scale(1.5)";
   }
 
-  console.log(value);
+  // 스크롤 다운
+  if (value >= 3000 && value <= 3500) {
+    const fadeOutStart = 3000;
+    const fadeOutEnd = 3500;
+    const maxOpacity = 1;
+    const minOpacity = 0;
+    const progressOpacity =
+      maxOpacity -
+      ((value - fadeOutStart) / (fadeOutEnd - fadeOutStart)) *
+        (maxOpacity - minOpacity);
+
+    scrollDownBoxElement.style.opacity = progressOpacity;
+    scrollDownElement.style.display = 'flex';
+  } else if (value > 3500) {
+    scrollDownBoxElement.style.opacity = 0;
+    scrollDownElement.style.display = 'none';
+  } else {
+    scrollDownBoxElement.style.opacity = 1;
+    scrollDownElement.style.display = 'flex';
+  }
+
+  if (value >= 3500 && value <= 4500) {
+    const fadeOutStart = 3500;
+    const fadeOutEnd = 4500;
+    const maxOpacity = 1;
+    const minOpacity = 0;
+    const progressOpacity =
+      maxOpacity -
+      ((value - fadeOutStart) / (fadeOutEnd - fadeOutStart)) *
+        (maxOpacity - minOpacity);
+
+    parallaxElement.style.opacity = Math.max(minOpacity, Math.min(progressOpacity, maxOpacity));
+  } else if (value > 4500) {
+    parallaxElement.style.opacity = 0;
+  } else {
+    parallaxElement.style.opacity = 1;
+  }
 });
