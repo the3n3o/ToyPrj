@@ -4,7 +4,7 @@
 .parallax {
   position: relative;
   width: 100%;
-  height: 4500px;
+  height: 4000px;
   background-color: var(--black-color);
 }
 
@@ -183,15 +183,16 @@
 /* Bridge */
 .bridge {
   display: flex;
-  height: 300vh;
+  height: 200vh;
   background-color: var(--black-color);
   justify-content: center;
   align-items: center;
 }
 
 .bridge-text {
-  position: sticky;
-  top: 0;
+  position: fixed;
+  display: none;
+  top: 50%;
 }
 
 .project {

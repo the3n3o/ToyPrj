@@ -1,0 +1,66 @@
+@charset "utf-8";
+
+*,
+*::before,
+*::after {
+  /* 테두리를 기준으로 크기 정의 */
+  box-sizing: border-box;
+}
+
+html {
+  font-family: -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI", "Roboto", "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  /* `font` 속성 리셋 */
+  font-size                  : 16px;
+  /* 기본 글꼴 사이즈 정의            : 16x => 1rem */
+  font-weight                : normal;
+  line-height                : normal;
+  /* 기본 컬러 */
+  background-color           : inherit;
+  color                      : inherit;
+  /* 글꼴 크기 조정을 방지 */
+  -webkit-text-size-adjust   : 100%;
+  /* 폰트를 부드럽게 */
+  -webkit-font-smoothing     : antialiased;
+  -moz-osx-font-smoothing    : grayscale;
+  /* 터치 요소 하이라이트 제거 */
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  margin: 0;
+}
+
+/* 기본 셋업 */
+header,section,article,aside,footer,main,a,button,input,textarea,img,nav,ul,ol,li,p,h1,h2,h3,h4,h5,h6,div,span{
+  margin   : 0;
+  padding  : 0;
+  /* 폰트 크기 상속 */
+  font-size: inherit;
+}
+
+/* ========== root ========== */
+:root {
+    /* color */
+    --white-color: #f5f5f5;
+    --black-color: #121212;
+    --primary-color: ;
+    --secondary-color: ;
+    --tertiary-color: ;
+    --quaternary-color: ;
+  
+    --hover-color: ;
+    --hover-secondary-color: ;
+  
+    --primary-font-color: ;
+    --secondary-font-color: ;
+    --shadow-color: ;
+    
+    --scroll-color: ;
+    /* size */
+    --nav-width: ;
+    --border-radius: ;
+    /* font & size */
+}

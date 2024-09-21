@@ -181,9 +181,9 @@ window.addEventListener("scroll", () => {
     scrollDownElement.style.display = 'flex';
   }
 
-  if (value >= 3500 && value <= 4500) {
+  if (value >= 3500 && value <= 4000) {
     const fadeOutStart = 3500;
-    const fadeOutEnd = 4500;
+    const fadeOutEnd = 4000;
     const maxOpacity = 1;
     const minOpacity = 0;
     const progressOpacity =
@@ -192,9 +192,21 @@ window.addEventListener("scroll", () => {
         (maxOpacity - minOpacity);
 
     parallaxElement.style.opacity = Math.max(minOpacity, Math.min(progressOpacity, maxOpacity));
-  } else if (value > 4500) {
+    // bridge
+    bridgeTextElement.style.opacity = Math.max(minOpacity, math.min(progressOpacity, maxOpacity));
+    bridgeTextElement.style.position = 'fixed';
+    bridgeTextElement.style.display = 'block';
+  } else if (value > 4000) {
     parallaxElement.style.opacity = 0;
+    // bridge
+    bridgeTextElement.style.opacity = 1;
+    bridgeTextElement.style.position = 'fixed';
+    bridgeTextElement.style.display = 'block';
   } else {
     parallaxElement.style.opacity = 1;
+    // bridge
+    bridgeTextElement.style.opacity = 0;
+    bridgeTextElement.style.position = 'fixed';
+    bridgeTextElement.style.display = 'none';
   }
 });
