@@ -9,11 +9,11 @@
 }
 
 body {
-  background: linear-gradient(135deg, #9859b6, rgb(196, 70, 112));
-  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  min-height: 100vh;
+  background: #9859b6;
 }
 
 .wrapper {
@@ -25,34 +25,32 @@ body {
 .wrapper header {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   padding: 25px 30px 10px;
+  justify-content: space-between;
 }
 
 header .current-date {
-  font-size: 1.5rem;
+  font-size: 1.45rem;
   font-weight: 500;
-  user-select: none;
 }
 
-.icons span {
+header .icons span{
   height: 38px;
   width: 38px;
+  color: #878787;
+  font-size: 1.9rem;
+  margin: 0 1px;
   line-height: 38px;
   text-align: center;
-  margin: 0 1px;
   border-radius: 50%;
-  font-size: 1.9rem;
   cursor: pointer;
-  color: #878787;
-  user-select: none;
 }
 
-.icons span:hover {
+header .icons span:hover {
   background: #f2f2f2;
 }
 
-.icons span:last-child {
+header .icons span:last-child {
   margin-right: -10px;
 }
 
@@ -67,13 +65,8 @@ header .current-date {
   text-align: center;
 }
 
-.calendar ul li {
-  width: calc(100% / 7);
-}
-
 .calendar .weeks li {
   font-weight: 500;
-  user-select: none;
 }
 
 .calendar .days {
@@ -81,27 +74,34 @@ header .current-date {
 }
 
 .calendar .days li {
-  position: relative;
+  z-index: 1;
   margin-top: 30px;
   cursor: pointer;
-  z-index: 1;
-  user-select: none;
+}
+
+.calendar ul li {
+  position: relative;
+  width: calc(100% / 7);
 }
 
 .calendar .days li::before {
   position: absolute;
   content: '';
+  z-index: -1;
   top: 50%;
   left: 50%;
-  width: 40px;
   height: 40px;
-  border-radius: 50%;
+  width: 40px;
   transform: translate(-50%, -50%);
-  z-index: -1;
+  border-radius: 50%;
 }
 
 .days li:hover::before {
-  background-color: #f2f2f2;
+  background: #f2f2f2;
+}
+
+.days li.inactive {
+  color: #aaa;
 }
 
 .days li.active {
@@ -110,8 +110,4 @@ header .current-date {
 
 .days li.active::before {
   background: #9b59b6;
-}
-
-.days li.inactive {
-  color: #aaa;
 }
