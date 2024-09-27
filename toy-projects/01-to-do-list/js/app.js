@@ -7,14 +7,14 @@ function addTask(){
   }
   else {
     let li = document.createElement('li');
-    li.innerHTML = inputBox.value;
+    li.innerText = inputBox.value;
     listContainer.appendChild(li);
     let span = document.createElement('span');
-    span.innerHTML = '\u00d7';
+    span.innerText = '\u00d7';
     li.appendChild(span);
+    saveData();
   }
   inputBox.value = '';
-  saveData();
 }
 
 listContainer.addEventListener('click', function(event){
