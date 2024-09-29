@@ -108,7 +108,11 @@ function validateInput(value) {
 
   if (value == "." && lastInput == ".") {
     return false;
-  } // . 이 연속해서 두번 오는것을 방지
+  } // . 이 연속해서 두번 나오는것을 방지
+
+  if (value == '%' && lastInput == '%') {
+    return false;
+  } // % 이 연속해서 두번 나오는것을 방지
 
   if (operator.includes(value)) {
     // operator 변수에 value가 포함된다면 ture, 아니라면 false 반환
