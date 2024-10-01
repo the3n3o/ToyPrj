@@ -1,0 +1,36 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.calculator {
+  background: #22252d;
+  width: 100%;
+  max-width: 375px;
+  min-height: 640px;
+  border-radius: 20px;
+}
+
+.display {
+  min-height: 200px;
+  display: flex;
+  color: white;
+  text-align: right;
+  justify-content: flex-end;
+  align-items: flex-end;
+  padding: 1.5rem;
+}
+
+.keys {
+  background: #292d36;
+  border-radius: 20px;
+}
