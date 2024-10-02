@@ -30,7 +30,53 @@
   padding: 1.5rem;
 }
 
+.display .input {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.display .output {
+  font-size: 3rem;
+  font-weight: 700;
+  width: 100%;
+  min-width: 100%;
+}
+
 .keys {
   background: #292d36;
-  border-radius: 20px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  gap: 1rem;
+  padding: 1.5rem;
+  border-radius: 1.5rem;
+  box-shadow: 0px -2px 16px rgba(0, 0, 0, 0.2);
+}
+
+.keys .key {
+  background-color: #262933;
+  position: relative;
+  cursor: pointer;
+  border-radius: 1rem;
+  user-select: none;
+  padding-top: 100%;
+  transition: 0.2s;
+}
+
+.keys .key span {
+  position: absolute;
+  color: #fff;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.keys .key.action span {
+  color: #26fed7;
+}
+
+.keys .key.operator span {
+  color: #eb6666;
 }
