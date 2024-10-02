@@ -1,6 +1,6 @@
 * {
-  margin: 0;
   padding: 0;
+  margin: 0;
   box-sizing: border-box;
   font-family: sans-serif;
 }
@@ -21,12 +21,12 @@
 }
 
 .display {
+  color: #fff;
   min-height: 200px;
   display: flex;
-  color: white;
-  text-align: right;
-  justify-content: flex-end;
   align-items: flex-end;
+  justify-content: flex-end;
+  text-align: right;
   padding: 1.5rem;
 }
 
@@ -38,45 +38,56 @@
 .display .output {
   font-size: 3rem;
   font-weight: 700;
-  width: 100%;
-  min-width: 100%;
 }
 
 .keys {
   background: #292d36;
+  border-radius: 1.5rem;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(5, 1fr);
-  gap: 1rem;
   padding: 1.5rem;
-  border-radius: 1.5rem;
+  gap: 1rem;
   box-shadow: 0px -2px 16px rgba(0, 0, 0, 0.2);
 }
 
 .keys .key {
-  background-color: #262933;
-  position: relative;
-  cursor: pointer;
-  border-radius: 1rem;
-  user-select: none;
   padding-top: 100%;
+  background: #262933;
+  border-radius: 1rem;
+  cursor: pointer;
+  user-select: none;
+  position: relative;
+  height: 0;
   transition: 0.2s;
 }
 
 .keys .key span {
   position: absolute;
-  color: #fff;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 2rem;
   font-weight: 700;
+  color: #fff;
 }
 
-.keys .key.action span {
-  color: #26fed7;
+.keys .key.action span{
+  color: #26fed7
 }
 
-.keys .key.operator span {
+.keys .key.operator span{
   color: #eb6666;
+}
+
+.keys .key:hover {
+  box-shadow: inset 0px 0px 8px rgba(0, 0, 0, 0.2);
+}
+
+.display .operator {
+  color: #eb6666;
+}
+
+.display .action {
+  color: #26fed7;
 }
