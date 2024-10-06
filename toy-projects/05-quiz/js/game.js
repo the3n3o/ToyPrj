@@ -35,7 +35,8 @@ let questions = [
   },
 ];
 
-// Constants
+// Constant
+
 const CORRECT_BONUS = 10;
 const MAX_QUESTIONS = 3;
 
@@ -43,40 +44,47 @@ startGame = () => {
   questionCounter = 0;
   score = 0;
   availableQuestions = [...questions];
-  console.log(availableQuestions);
-  getNewQuestion();
+  getNewQuestions();
 };
 
-getNewQuestion = () => {
-  if (availableQuestions.length === 0 || questionCounter >= MAX_QUESTIONS) {
-    // go to the end page
-    return window.location.assign("/end.html");
+getNewQuestions = () => {
+  if(availableQuestions.length === 0 || questionCounter >= MAX_QUESTIONS) {
+    // Go to the end page
+    return window.location.assign('./end.html');
   }
   questionCounter++;
   const questionIndex = Math.floor(Math.random() * availableQuestions.length);
+
   currentQuestion = availableQuestions[questionIndex];
   question.innerText = currentQuestion.question;
 
-  choices.forEach((choice) => {
-    const number = choice.dataset["number"];
-    choice.innerText = currentQuestion["choice" + number];
-  });
+  choices.forEach(choice => {
+    const number = choice.dataset['number'];
+    choice.innerText = currentQuestion['choice' + number];
+  })
 
-  availableQuestions.splice(questionIndex, 1);
+  availableQuestions.splice(questionIndex,1);
 
   acceptingAnswers = true;
 };
 
-choices.forEach((choice) => {
-  choice.addEventListener("click", (event) => {
-    if (!acceptingAnswers) return;
+choices.forEach(choice => {
+  choice.addEventListener('click', event => {
+    if(!acceptingAnswers) return;
 
     acceptingAnswers = false;
     const selectedChoice = event.target;
-    const selectedAnswer = selectedChoice.dataset["number"];
+    const selectedAnswer = selectedChoice.dataset['number'];
 
-    getNewQuestion();
-  });
-});
+    const classToApply = selectedAnswer == currentQuestion.answer ? 'correct' : 'incorrect';
+
+    selectedChoice.parentElement.classList.add(classToApply);
+
+    setTimeout(() => {
+      selectedChoice.parentElement.classList.remove(classToApply);
+      getNewQuestions();
+    }, 1000);
+  })
+})
 
 startGame();
