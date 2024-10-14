@@ -1,0 +1,116 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  list-style: none;
+}
+
+body {
+  background-color: rgb(20, 20, 20);
+  color: white;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  outline: none;
+}
+
+.side-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #353535;
+  height: 100vh;
+  width: 100px;
+}
+
+#category li {
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+#category li a {
+  display: block;
+  padding: 40px 20px;
+}
+
+#category li.unactive:hover {
+  background-color: rgb(111, 111, 111);
+}
+
+.active {
+  background-color: rgb(86, 200, 229);
+}
+
+.container {
+  display: flex;
+/*   height: 100vh; */
+  margin-left: 100px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.timer-box {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 800px;
+  align-items: center;
+  justify-content: center;
+  padding: 0 100px;
+}
+
+#timer-paragraph {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+#timer {
+  font-size: 8rem;
+  font-weight: 700;
+  color: rgb(238, 161, 27);
+}
+
+.timer-panel {
+  position: absolute;
+  bottom: 40px;
+}
+
+.icon {
+  font-size: 1.2rem;
+}
+
+.time-list-box {
+  display: flex;
+  flex-direction: column;
+  margin-left: 100px;
+  background-color: #353535;
+  padding: 30px;
+  text-align: center;
+}
+
+.time-list-box p{
+  margin-bottom: 30px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: rgb(255, 225, 173);
+}
+
+.time-list {
+  padding: 10px;
+  margin-top: 10px;
+}
+
+.time-list td {
+  padding: 10px 100px;
+  cursor: pointer;
+}
+
+.time-list td:hover {
+  background-color: rgb(111, 111, 111);
+}
