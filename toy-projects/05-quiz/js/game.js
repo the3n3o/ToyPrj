@@ -3,6 +3,8 @@ const choices = document.querySelectorAll(".choice-text");
 const progressText = document.querySelector("#progressText");
 const scoreText = document.querySelector("#score");
 const progressBarFull = document.querySelector("#progressBarFull");
+const loader = document.querySelector('#loader');
+const game = document.querySelector('#game');
 
 let currentQuestion = {};
 let acceptingAnswers = false;
@@ -38,7 +40,6 @@ fetch(
 
       return formattedQuestion;
     });
-    // questions = loadedQuestions;
     startGame();
   })
   .catch((err) => {
@@ -48,13 +49,15 @@ fetch(
 // Constant
 
 const CORRECT_BONUS = 10;
-const MAX_QUESTIONS = 3;
+const MAX_QUESTIONS = 10;
 
 startGame = () => {
   questionCounter = 0;
   score = 0;
   availableQuestions = [...questions];
   getNewQuestions();
+  game.classList.remove('hidden');
+  loader.classList.add('hidden');
 };
 
 getNewQuestions = () => {
