@@ -185,3 +185,7 @@ a {
 #start {
   background-color: #4aae71;
 }
+
+.timer-on {
+  background-color: #ff216e !important;
+}
