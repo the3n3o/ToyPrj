@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./css/app.css" />
     <script src="./js/app.js" defer></script>
     <script src="./js/timer.js" defer></script>
@@ -18,53 +22,68 @@
     <div class="container">
       <div class="timer-box">
         <div class="timer-panel">
-          <span class="icon">-</span>
-          <span class="icon">+</span>
-          <span class="icon">전체</span>
+          <span class="material-symbols-outlined icon" id="remove">
+            remove
+          </span>
+          <span class="material-symbols-outlined icon" id="add"> add </span>
+          <span class="material-symbols-outlined icon" id="fullscreen">
+            fullscreen
+          </span>
         </div>
         <p id="timer-paragraph">N분 타이머</p>
-        <span id="timer">00:00:00</span>
+        <span id="timer">00:01:00</span>
+        <div class="timer-config-box">
+          <button class="btn" id="edit">수정</button>
+          <button class="btn" id="reset">리셋</button>
+          <button class="btn" id="start">시작</button>
+        </div>
+        <div class="timer-list-config-box">
+          <span class="material-symbols-outlined icon" id="menu"> menu </span>
+        </div>
+        <div id="time-list-box-toggle" class="hidden">
+          <div class="time-list-box">
+            <p>특정 시간의 타이머 설정</p>
+            <span class="material-symbols-outlined icon" id="x"> close </span>
+            <hr />
+            <table class="time-list">
+              <tbody>
+                <tr>
+                  <td>1분 타이머</td>
+                  <td>10초 타이머</td>
+                </tr>
+                <tr>
+                  <td>2분 타이머</td>
+                  <td>20초 타이머</td>
+                </tr>
+                <tr>
+                  <td>3분 타이머</td>
+                  <td>30초 타이머</td>
+                </tr>
+                <tr>
+                  <td>4분 타이머</td>
+                  <td>40초 타이머</td>
+                </tr>
+                <tr>
+                  <td>5분 타이머</td>
+                  <td>50초 타이머</td>
+                </tr>
+                <tr>
+                  <td>10분 타이머</td>
+                  <td>1시간 타이머</td>
+                </tr>
+                <tr>
+                  <td>20분 타이머</td>
+                  <td>2시간 타이머</td>
+                </tr>
+                <tr>
+                  <td>30분 타이머</td>
+                  <td>3시간 타이머</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="time-list-box">
-      <p>특정 시간의 타이머 설정</p>
-      <hr>
-      <table class="time-list">
-        <tbody>
-          <tr>
-            <td>1분 타이머</td>
-            <td>10초 타이머</td>
-          </tr>
-          <tr>
-            <td>2분 타이머</td>
-            <td>20초 타이머</td>
-          </tr>
-          <tr>
-            <td>3분 타이머</td>
-            <td>30초 타이머</td>
-          </tr>
-          <tr>
-            <td>4분 타이머</td>
-            <td>40초 타이머</td>
-          </tr>
-          <tr>
-            <td>5분 타이머</td>
-            <td>50초 타이머</td>
-          </tr>
-          <tr>
-            <td>10분 타이머</td>
-            <td>1시간 타이머</td>
-          </tr>
-          <tr>
-            <td>20분 타이머</td>
-            <td>2시간 타이머</td>
-          </tr>
-          <tr>
-            <td>30분 타이머</td>
-            <td>3시간 타이머</td>
-          </tr>
-        </tbody>
-      </table>
     </div>
   </body>
 </html>

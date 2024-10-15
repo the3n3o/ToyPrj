@@ -1,3 +1,5 @@
+@import url(https://db.onlinewebfonts.com/c/84cb021d5f9af287ffff84b61beef6dc?family=clockicons);
+
 * {
   margin: 0;
   padding: 0;
@@ -17,6 +19,10 @@ a {
   outline: none;
 }
 
+.hidden {
+  display: none;
+}
+
 .side-bar {
   position: fixed;
   top: 0;
@@ -24,6 +30,7 @@ a {
   background: #353535;
   height: 100vh;
   width: 100px;
+  overflow: hidden;
 }
 
 #category li {
@@ -34,7 +41,7 @@ a {
 
 #category li a {
   display: block;
-  padding: 40px 20px;
+  padding: 40px 0px;
 }
 
 #category li.unactive:hover {
@@ -42,26 +49,28 @@ a {
 }
 
 .active {
-  background-color: rgb(86, 200, 229);
+  background-color: #56c8e5;
 }
 
 .container {
   display: flex;
-/*   height: 100vh; */
+  height: 100vh;
   margin-left: 100px;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
+/*   flex-direction: column; */
+  overflow: hidden;
 }
 
 .timer-box {
   position: relative;
   display: flex;
   flex-direction: column;
-  height: 800px;
+  height: 100vh;
+  width: 80%;
   align-items: center;
   justify-content: center;
-  padding: 0 100px;
+  padding: 0 120px;
 }
 
 #timer-paragraph {
@@ -72,13 +81,15 @@ a {
 
 #timer {
   font-size: 8rem;
-  font-weight: 700;
+  font-weight: 500;
+  font-family: clockicons, sans-serif;
   color: rgb(238, 161, 27);
 }
 
 .timer-panel {
   position: absolute;
-  bottom: 40px;
+  top: 60px;
+  right: 0;
 }
 
 .icon {
@@ -87,15 +98,19 @@ a {
 
 .time-list-box {
   display: flex;
+  position: absolute;
+  bottom: 40px;
+  right: 0px;
   flex-direction: column;
-  margin-left: 100px;
+  min-width: 500px;
   background-color: #353535;
-  padding: 30px;
+  padding: 20px 10px;
   text-align: center;
+  border-radius: 10px;
 }
 
 .time-list-box p{
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   font-size: 1.5rem;
   font-weight: 700;
   color: rgb(255, 225, 173);
@@ -107,10 +122,66 @@ a {
 }
 
 .time-list td {
-  padding: 10px 100px;
+  padding: 10px;
   cursor: pointer;
 }
 
 .time-list td:hover {
   background-color: rgb(111, 111, 111);
+}
+
+.icon {
+  font-size: 28px;
+  cursor: pointer;
+}
+
+.icon:hover {
+  color: #56c8e5;
+}
+
+.timer-config-box {
+  position: absolute;
+  bottom: 60px;
+}
+
+.btn {
+  padding: 10px 20px;
+  border-radius: 10px;
+  outline: none;
+  cursor: pointer;
+  border: none;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: white;
+  margin: 0 10px;
+}
+
+#x {
+  position: absolute;
+  font-size: 24px;
+  right: 20px;
+}
+
+.timer-list-config-box {
+  position: absolute;
+  bottom: 60px;
+  right: 0;
+}
+
+#menu {
+  font-size: 40px;
+}
+
+#menu:hover {
+  color: #56c8e5;
+}
+
+#edit {
+  background-color: #00a1f7;
+}
+#reset {
+  background-color: #fbb629;
+}
+#start {
+  background-color: #4aae71;
 }
