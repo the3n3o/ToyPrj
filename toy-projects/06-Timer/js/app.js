@@ -2,13 +2,26 @@ const modalFade = document.querySelector('#modalfade');
 const menuIcon = document.querySelector("#menu");
 const xIcon = document.querySelector("#x");
 const timeListBoxToggle = document.querySelector("#time-list-box-toggle");
+const cancel = document.querySelector('#cancel');
+const save = document.querySelector('#save');
+const timeEditBox = document.querySelector('#time-edit-box');
 
 const timerDisplay = document.querySelector("#timer");
 const start = document.querySelector("#start");
 const reset = document.querySelector("#reset");
 const edit = document.querySelector("#edit");
 
+// preventDefault //
+const form = document.querySelector('form');
+
+form.addEventListener('submit', (event) => {
+  event.preventDefault();
+})
+
+
 // icons & backdrop //
+
+
 menuIcon.addEventListener("click", () => {
   timeListBoxToggle.classList.toggle("hidden");
   if(timeListBoxToggle.classList.contains('hidden')){
@@ -27,6 +40,17 @@ xIcon.addEventListener("click", (event) => {
     modalFade.style.display = 'block';
   }
 });
+
+const toggleTimeEditBox = () => {
+timeEditBox.classList.toggle('hidden');
+if(timeEditBox.classList.contains('hidden')){
+  modalFade.style.display = 'none';
+} else {
+  modalFade.style.display = 'block';
+}};
+
+edit.addEventListener('click', toggleTimeEditBox);
+cancel.addEventListener('click', toggleTimeEditBox);
 
 // - , + , fullview
 

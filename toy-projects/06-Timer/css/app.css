@@ -205,15 +205,56 @@ a {
 }
 
 #time-edit-box {
+  z-index: 101;
   background: #353535;
   border-radius: 10px;
+  position: absolute;
+  width: 300px;
 }
 
 #time-edit-box p {
   font-size: 1.5rem;
-  padding: 20px 10px;
+  padding: 20px 20px;
   background-color: rgb(41, 41, 41);
   border-radius: 10px 10px 0 0;
+}
+
+.edit-input {
+  display: flex;
+  padding: 20px 20px;
+}
+
+.edit-input label {
+  display: block;
+}
+
+.edit-input div {
+  margin: 0 10px;
+}
+
+.edit-input select {
+  margin-top: 10px;
+  font-size: 1.25rem;
+  padding: 10px;
+}
+
+#form-btn {
+  display: flex;
+  justify-content: center;
+  margin: 10px 0 20px 0;
+  gap: 10px;
+}
+
+#form-btn button {
+  font-size: 1.25rem;
+  outline: none;
+  border: none;
+  box-shadow: none;
+  cursor: pointer;
+}
+
+#form-btn button:first-child {
+  margin-right: 5px;
 }
 
 /* media */
