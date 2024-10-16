@@ -1,3 +1,4 @@
+const modalFade = document.querySelector('#modalfade');
 const menuIcon = document.querySelector("#menu");
 const xIcon = document.querySelector("#x");
 const timeListBoxToggle = document.querySelector("#time-list-box-toggle");
@@ -7,13 +8,24 @@ const start = document.querySelector("#start");
 const reset = document.querySelector("#reset");
 const edit = document.querySelector("#edit");
 
-// icons //
+// icons & backdrop //
 menuIcon.addEventListener("click", () => {
-  timeListBoxToggle.classList.remove("hidden");
+  timeListBoxToggle.classList.toggle("hidden");
+  if(timeListBoxToggle.classList.contains('hidden')){
+    modalFade.style.display = 'none';
+  } else {
+    modalFade.style.display = 'block';
+  }
 });
 
-xIcon.addEventListener("click", () => {
-  timeListBoxToggle.classList.add("hidden");
+xIcon.addEventListener("click", (event) => {
+  const grandparent = event.target.parentElement.parentElement;
+  grandparent.classList.add('hidden');
+  if(grandparent.classList.contains('hidden')){
+    modalFade.style.display = 'none';
+  } else {
+    modalFade.style.display = 'block';
+  }
 });
 
 // - , + , fullview
@@ -63,3 +75,5 @@ const startTimer = () => {
 };
 
 start.addEventListener("click", startTimer);
+
+// edit //

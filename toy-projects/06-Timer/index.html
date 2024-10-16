@@ -13,7 +13,9 @@
     <script src="./js/app.js" defer></script>
   </head>
   <body>
+    <div id="modalfade"></div>
     <aside class="side-bar">
+      <span class="material-symbols-outlined icon" id="side-menu"> menu </span>
       <ul id="category">
         <li class="active"><a href="./">타이머</a></li>
         <li class="unactive"><a href="./stopwatch.html">스톱워치</a></li>
@@ -39,6 +41,19 @@
         </div>
         <div class="timer-list-config-box">
           <span class="material-symbols-outlined icon" id="menu"> menu </span>
+        </div>
+        <div id="time-edit-box" class="">
+          <p>타이머 수정</p>
+          <form>
+            <label for="edit-hour">시간</label>
+            <input type="number" name="edit-hour" id="edit-hour">
+            <label for="edit-min">분</label>
+            <input type="number" name="edit-min" id="edit-min">
+            <label for="edit-sec">초</label>
+            <input type="number" name="edit-sec" id="edit-sec">
+            <button>취소</button>
+            <button>저장</button>
+          </form>
         </div>
         <div id="time-list-box-toggle" class="hidden">
           <div class="time-list-box">
