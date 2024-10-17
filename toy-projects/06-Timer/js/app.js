@@ -16,6 +16,8 @@ const editSec = document.querySelector("#edit-sec");
 const timerName = document.querySelector("#name");
 const timerParagraph = document.querySelector("#timer-paragraph");
 
+const specificTimes = document.querySelectorAll("td");
+
 // preventDefault //
 const form = document.querySelector("form");
 
@@ -203,8 +205,44 @@ save.addEventListener("click", () => {
 // page reload //
 window.addEventListener("load", () => {
   timerDisplay.innerText = formatTime(timeLeft);
-  timerParagraph.innerText = localStorage.getItem('saveTimerTitle');
+  timerParagraph.innerText = localStorage.getItem("saveTimerTitle");
   if (localStorage.getItem("timerStatus")) {
     startTimer();
   }
+  console.log(timeLeft);
 });
+
+// specific timer //
+
+for (let i = 0; i < specificTimes.length; i++) {
+  const match = specificTimes[i].textContent.match(/\d+/g);
+  const matchString = specificTimes[i].textContent.split(" ")[0];
+
+  specificTimes[i].addEventListener("click", (event) => {
+    if (matchString.includes("시간")) {
+      timeLeft = match * 3600;
+    } else if (matchString.includes("분")) {
+      timeLeft = match * 60;
+    } else if (matchString.includes("초")) {
+      timeLeft = match;
+    }
+    timerDisplay.innerText = formatTime(timeLeft);
+    timerParagraph.innerText = `${event.target.textContent}`;
+    saveTimer();
+    setTime();
+    saveTimerTitle();
+
+    // 모달 종료
+    timeListBoxToggle.classList.toggle("hidden");
+    if (timeListBoxToggle.classList.contains("hidden")) {
+      modalFade.style.display = "none";
+    } else {
+      modalFade.style.display = "block";
+    }
+  });
+}
+
+
+// 폰트 축소, 확대 & 전체화면 기능 구현
+
+// 스톱워치 구현
