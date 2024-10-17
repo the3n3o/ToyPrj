@@ -32,8 +32,8 @@
             fullscreen
           </span>
         </div>
-        <p id="timer-paragraph">N분 타이머</p>
-        <span id="timer">00:01:00</span>
+        <p id="timer-paragraph">시간을 설정해주세요.</p>
+        <span id="timer">00:00:00</span>
         <div class="timer-config-box">
           <button class="btn" id="edit">수정</button>
           <button class="btn" id="reset">리셋</button>
@@ -132,7 +132,7 @@
               <div>
                 <label for="edit-sec">초</label>
                 <select id="edit-sec">
-                  <option value="1">0</option>
+                  <option value="0">0</option>
                   <option value="1">1</option>
                   <option value="2">2</option>
                   <option value="3">3</option>
@@ -194,6 +194,10 @@
                   <option value="59">59</option>
                 </select>
               </div>
+            </div>
+            <div class="edit-name">
+              <label for="name">타이머 이름</label>
+              <input type="text" id="name" placeholder="1분 타이머">
             </div>
             <div id="form-btn">
               <button id="cancel">취소</button>
