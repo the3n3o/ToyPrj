@@ -8,6 +8,7 @@ const timeListBoxToggle = document.querySelector("#time-list-box-toggle");
 const cancel = document.querySelector("#cancel");
 const save = document.querySelector("#save");
 const timeEditBox = document.querySelector("#time-edit-box");
+const stopWatch = document.querySelector('#stopwatch');
 
 const timerDisplay = document.querySelector("#timer");
 const start = document.querySelector("#start");

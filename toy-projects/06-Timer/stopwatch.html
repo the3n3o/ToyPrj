@@ -1,19 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="./css/app.css">
-  <script src="./js/app.js"></script>
-  <script src="./js/stopwatch.js"></script>
-</head>
-<body>
-  <aside class="side-bar">
-    <ul id="category">
-      <li class="unactive">타이머</li>
-      <li class="active">스톱워치</li>
-    </ul>
-  </aside>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/app.css" />
+    <script src="./js/app.js"></script>
+    <script src="./js/stopwatch.js"></script>
+  </head>
+  <body>
+    <div id="modalfade"></div>
+    <aside class="side-bar">
+      <span class="material-symbols-outlined icon" id="side-menu"> menu </span>
+      <ul id="category">
+        <li class="unactive"><a href="./">타이머</a></li>
+        <li class="active"><a href="./stopwatch.html">스톱워치</a></li>
+      </ul>
+    </aside>
+    <div class="container">
+      <div class="timer-box">
+        <div class="timer-panel">
+          <span class="material-symbols-outlined icon" id="remove">
+            remove
+          </span>
+          <span class="material-symbols-outlined icon" id="add"> add </span>
+          <span class="material-symbols-outlined icon" id="fullscreen">
+            fullscreen
+          </span>
+        </div>
+        <span id="stopwatch">00:00:00</span>
+        <div class="timer-config-box">
+          <button class="btn" id="reset">재설정</button>
+          <button class="btn" id="start">시작</button>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>

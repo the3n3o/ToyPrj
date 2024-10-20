@@ -99,6 +99,13 @@ a {
   color: rgb(238, 161, 27);
 }
 
+#stopwatch {
+  font-size: 8rem;
+  font-weight: 500;
+  font-family: clockicons, sans-serif;
+  color: rgb(238, 161, 27);
+}
+
 .timer-panel {
   position: absolute;
   top: 60px;
@@ -289,6 +296,10 @@ label {
     font-size: 6rem;
   }
 
+  #stopwatch {
+    font-size: 6rem;
+  }
+
   .time-list-box {
     min-width: 400px;
   }
@@ -329,6 +340,10 @@ label {
   }
 
   #timer {
+    font-size: 4rem;
+  }
+
+  #stopwatch {
     font-size: 4rem;
   }
 
