@@ -74,11 +74,11 @@ function cellClicked(cell, index) {
     board[index] = currentPlayer;
     checkWinner();
     // currentPlayer = currentPlayer === 'O' ? 'X' : 'O';
-    if (currentPlayer === "O") {
+    if (currentPlayer === "O" && gameActive) {
       currentPlayer = "X";
       player2.classList.add("turn");
       player1.classList.remove("turn");
-    } else {
+    } else if (currentPlayer === 'X' && gameActive) {
       currentPlayer = "O";
       player1.classList.add("turn");
       player2.classList.remove("turn");
