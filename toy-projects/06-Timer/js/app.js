@@ -1,5 +1,8 @@
 const modalFade = document.querySelector("#modalfade");
 const menuIcon = document.querySelector("#menu");
+const addIcon = document.querySelector("#add");
+const removeIcon = document.querySelector("#remove");
+const fullscreenIcon = document.querySelector("#fullscreen");
 const xIcon = document.querySelector("#x");
 const timeListBoxToggle = document.querySelector("#time-list-box-toggle");
 const cancel = document.querySelector("#cancel");
@@ -242,7 +245,35 @@ for (let i = 0; i < specificTimes.length; i++) {
   });
 }
 
-
 // 폰트 축소, 확대 & 전체화면 기능 구현
+removeIcon.addEventListener("click", () => {
+  const currentTimerFontSize = window.getComputedStyle(timerDisplay).fontSize; // 128px
+  const formattedCurrentTimerFontSize = currentTimerFontSize.match(/\d+/g)[0];
+
+  if (formattedCurrentTimerFontSize > 100) {
+    timerDisplay.style.fontSize = `${
+      Number(formattedCurrentTimerFontSize) - 50
+    }px`;
+  }
+});
+
+addIcon.addEventListener("click", () => {
+  const currentTimerFontSize = window.getComputedStyle(timerDisplay).fontSize; // 128px
+  const formattedCurrentTimerFontSize = currentTimerFontSize.match(/\d+/g)[0];
+
+  if (formattedCurrentTimerFontSize < 150) {
+    timerDisplay.style.fontSize = `${
+      Number(formattedCurrentTimerFontSize) + 50
+    }px`;
+  }
+});
+
+fullscreenIcon.addEventListener("click", () => {
+  if(!document.fullscreenElement){
+    document.documentElement.requestFullscreen();
+  } else {
+    document.exitFullscreen();
+  }
+});
 
 // 스톱워치 구현
