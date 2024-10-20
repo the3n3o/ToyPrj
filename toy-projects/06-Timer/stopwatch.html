@@ -9,8 +9,8 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./css/app.css" />
-    <script src="./js/app.js"></script>
-    <script src="./js/stopwatch.js"></script>
+    <script src="./js/app.js" defer></script>
+    <script src="./js/stopwatch.js" defer></script>
   </head>
   <body>
     <div id="modalfade"></div>
@@ -32,11 +32,15 @@
             fullscreen
           </span>
         </div>
-        <span id="stopwatch">00:00:00</span>
+        <span id="timer">00:00:00</span>
         <div class="timer-config-box">
           <button class="btn" id="reset">재설정</button>
           <button class="btn" id="start">시작</button>
         </div>
+      </div>
+      <div class="lap-box">
+        <ul class="lap-list">
+        </ul>
       </div>
     </div>
   </body>
