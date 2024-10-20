@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tic Tac Toe</title>
+  <link rel="stylesheet" href="./css/app.css">
+  <script src="./js/app.js" defer></script>
+</head>
+<body>
+  <div class="container">
+    <div class="player-config">
+      <div><span id="player1">Player 1 : O</span></div>
+      <div><span id="player2">Player 2 : X</span></div>
+    </div>
+    <div class="board">
+      <div class="modal">
+        <div class="modal-box">
+          <p id="modal-title">Tic Tac Toe!</p>
+          <div class="start-box">
+            <button id="random-start">랜덤시작</button>
+            <button id="normal-start">순차시작</button>
+            <button class="hidden" id="go-main">다시하기</button>
+          </div>
+        </div>
+      </div>
+      <table>
+        <tr id="tr1">
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr id="tr2">
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr id="tr3">
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</body>
+</html>

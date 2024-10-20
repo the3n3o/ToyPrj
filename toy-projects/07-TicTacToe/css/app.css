@@ -1,0 +1,99 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #141414;
+}
+
+span,
+p {
+  color: white;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.container {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 0 10%;
+}
+
+td {
+  border: 1px solid white;
+  background-color: white;
+  width: 200px;
+  height: 200px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 140px;
+  cursor: pointer;
+}
+
+td:hover {
+  background-color: #75dfff;
+}
+
+.player-config {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 50px;
+  width: 100%;
+  font-size: 1.25rem;
+}
+
+.turn {
+  color: #75dfff;
+}
+
+.modal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 604px;
+  height: 604px;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.modal-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 70%;
+  height: 50%;
+  background-color: #141414;
+  border-radius: 20px;
+}
+
+.modal-box p {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 40px;
+}
+
+.start-box {
+  display: flex;
+  gap: 20px;
+}
+
+.modal-box button {
+  outline: none;
+  border: none;
+  font-size: 2rem;
+  padding: 5px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.modal-box button:hover {
+  background-color: #75dfff;
+}
